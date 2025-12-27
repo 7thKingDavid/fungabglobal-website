@@ -1,0 +1,54 @@
+---
+let isOpen = false;
+---
+
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+    <!-- LOGO + BRAND -->
+    <a href="/" class="flex items-center gap-3 font-bold text-xl">
+      <img 
+        src="/logo.png" 
+        alt="FunGab Logo" 
+        class="max-w-18 max-h-18 object-contain"
+        width="108"
+        height="108"
+      />
+      <span class="bg-gradient-to-r from-[#D234C7] via-[#8279DC] to-[#32BEF1] 
+                   bg-clip-text text-transparent">
+        FunGab Global
+      </span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <ul class="hidden md:flex items-center gap-10 font-medium">
+      <li><a href="/" class="hover:text-[#D234C7]">Home</a></li>
+      <li><a href="/about" class="hover:text-[#D234C7]">About</a></li>
+      <li><a href="/services" class="hover:text-[#D234C7]">Services</a></li>
+      <li><a href="/gallery" class="hover:text-[#D234C7]">Gallery</a></li>
+      <li><a href="/contact" class="hover:text-[#D234C7]">Contact</a></li>
+    </ul>
+
+    <!-- Mobile Menu Icon -->
+    <button 
+      class="md:hidden flex flex-col gap-[5px]"
+      onclick="document.getElementById('mobileMenu').classList.toggle('hidden')"
+    >
+      <span class="w-7 h-[3px] bg-black"></span>
+      <span class="w-7 h-[3px] bg-black"></span>
+      <span class="w-7 h-[3px] bg-black"></span>
+    </button>
+
+  </div>
+
+  <!-- MOBILE DROPDOWN -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg border-t">
+    <ul class="flex flex-col gap-5 px-6 py-6 text-lg font-medium">
+      <li><a href="/" class="hover:text-[#D234C7]">Home</a></li>
+      <li><a href="/about" class="hover:text-[#D234C7]">About</a></li>
+      <li><a href="/services" class="hover:text-[#D234C7]">Services</a></li>
+      <li><a href="/gallery" class="hover:text-[#D234C7]">Gallery</a></li>
+      <li><a href="/contact" class="hover:text-[#D234C7]">Contact</a></li>
+    </ul>
+  </div>
+</nav>

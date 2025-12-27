@@ -1,0 +1,52 @@
+<section 
+  class="relative h-screen w-full flex items-center justify-center text-white overflow-hidden"
+>
+
+  <!-- BACKGROUND IMAGE -->
+  <img 
+    src="/bg-hero.jpg" 
+    alt="FunGab Studio" 
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- GRADIENT OVERLAY -->
+  <div class="absolute inset-0 bg-gradient-to-r from-[#D234C7]/70 via-[#8279DC]/70 to-[#32BEF1]/70"></div>
+
+  <!-- CONTENT -->
+  <div class="relative text-center px-6 animate-fadeIn">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+      FunGab Global — UK’s Creative Sound Powerhouse
+    </h1>
+
+    <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8">
+      We turn your music vision into unforgettable sound experiences.
+    </p>
+
+    <!-- CTA BUTTONS -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a 
+        href="/booking"
+        class="px-8 py-3 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition"
+      >
+        Book a Session
+      </a>
+
+      <button 
+        class="w-14 h-14 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/20 transition"
+        onclick="alert('Play demo functionality will be added later!')"
+      >
+        ▶
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 1.4s ease-out forwards;
+}
+</style>
