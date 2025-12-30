@@ -34,16 +34,16 @@
     </p>
 
     <!-- CTA BUTTONS -->
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <div class="flex flex-row gap-3 justify-center flex-wrap">
       <a 
         href="/booking"
-        class="px-8 py-3 rounded-full bg-gradient-to-r from-[#f1a0ec] to-[#baecfe] text-black font-semibold hover:bg-gray-200 transition"
+        class="px-5 py-2 rounded-full bg-gradient-to-r from-[#f1a0ec] to-[#baecfe] text-black font-semibold hover:bg-gray-200 transition"
       >
         Start a Project
       </a>
 
       <button 
-        class=" px-6 py-2 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/20 transition"
+        class=" px-4 py-2 rounded-full border-2 border-white flex items-center justify-center hover:bg-white/20 transition"
         onclick="alert('Play demo functionality will be added later!')"
       >
         View
@@ -120,7 +120,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-  if (sessionStorage.getItem("homepageAlertSeen")) return;
+  // if (sessionStorage.getItem("homepageAlertSeen")) return;
 
   setTimeout(() => {
     const modal = document.getElementById("homepage-alert");
