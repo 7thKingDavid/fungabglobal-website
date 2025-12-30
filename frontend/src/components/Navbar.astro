@@ -31,9 +31,9 @@ let isOpen = false;
 
     <!-- Mobile Menu Icon -->
     <button 
-      class="md:hidden flex flex-col gap-[5px]"
-      onclick="document.getElementById('mobileMenu').classList.toggle('hidden')"
-    >
+  class="md:hidden flex flex-col gap-[5px]"
+  onclick="toggleMenu()">
+
       <span class="w-7 h-[3px] bg-black"></span>
       <span class="w-7 h-[3px] bg-black"></span>
       <span class="w-7 h-[3px] bg-black"></span>
@@ -52,3 +52,10 @@ let isOpen = false;
     </ul>
   </div>
 </nav>
+
+
+<script client:load>
+  window.toggleMenu = function () {
+    document.getElementById("mobileMenu")?.classList.toggle("hidden");
+  };
+</script>
