@@ -1,32 +1,40 @@
 <!-- AlertPopup.astro -->
+
 <div
   id="homepage-alert"
   onclick="closeAlert()"
   class="fixed inset-0 z-[9999] hidden flex items-center justify-center bg-black/60 backdrop-blur-md px-4"
 >
   <div
-    class="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden grid grid-cols-2 items-stretch min-h-[220px]"
+    class="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden
+           grid grid-cols-2 items-stretch min-h-[220px]"
     onclick="event.stopPropagation()"
   >
-    <!-- LEFT: TEXT -->
+    <!-- LEFT TEXT -->
     <div class="p-4 md:p-10 flex flex-col justify-between h-full overflow-hidden">
       <h3 class="text-sm md:text-xl font-extrabold text-gray-900 mb-2 text-center leading-tight">
-        Welcome to <br> <span class="bg-gradient-to-r from-[#32BEF1] via-[#8279DC] to-[#D234C7] bg-clip-text text-transparent">FunGab Global</span>
+        Welcome to <br>
+        <span class="bg-gradient-to-r from-[#32BEF1] via-[#8279DC] to-[#D234C7] bg-clip-text text-transparent">
+          FunGab Global
+        </span>
       </h3>
 
       <p class="text-gray-600 text-[0.7rem] md:text-base leading-snug mb-3">
-        We are a UK-based creative powerhouse delivering excellence across
-        media, marketing, photography, music production, and cinematography.
+        We are a UK-based creative powerhouse delivering excellence across media,
+        marketing, photography, music production, and cinematography.
         Your ideas — elevated with precision, creativity, and impact.
       </p>
 
       <div class="flex gap-4">
+        <!--  << ONLY THIS WAS MINIMIZED ON MOBILE -->
         <a
-          href="/home"
+          href="/"
           class="inline-flex items-center justify-center rounded-full text-white font-semibold
-                 bg-gradient-to-r from-[#D234C7] to-[#32BEF1] px-4 py-4 text-xs md:text-base"
-        >
-          Get Started
+                 bg-gradient-to-r from-[#D234C7] to-[#32BEF1]
+                 px-3 py-2 text-[0.45rem]          
+                 md:px-4 md:py-4 md:text-base">    
+        
+          Explore
         </a>
 
         <button
@@ -38,7 +46,7 @@
       </div>
     </div>
 
-    <!-- RIGHT: IMAGE -->
+    <!-- RIGHT IMAGE -->
     <div class="relative h-full">
       <img
         src="/assets/popup-portrait.jpg"
@@ -46,11 +54,10 @@
         class="absolute w-full h-full object-cover"
       />
     </div>
-
   </div>
 </div>
 
-<!-- enable JS in production -->
+<!-- Hydrated script (works locally + on Vercel) -->
 <script client:load>
   document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {

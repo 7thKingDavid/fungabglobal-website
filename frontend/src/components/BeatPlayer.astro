@@ -1,0 +1,34 @@
+---
+// BeatPlayer.astro
+// Add beat.mp3 to public/assets/audio
+const beatFile = "/assets/audio/freebeat.mp3";
+---
+
+<section class="w-full bg-gradient-to-r from-[#f4d3f1] to-[#d0ebf5] py-6 px-3 md:px-12 flex flex-col md:flex-row items-center gap-8">
+  
+  <!-- Logo Left -->
+  <div class="md:w-1/3 flex justify-center md:justify-start">
+    <img src="/logo.png" alt="FunGab Global Logo" class="w-40 md:w-48 object-contain" />
+  </div>
+
+  <!-- Text + Player Right -->
+  <div class="md:w-2/3 flex flex-col gap-4 text-center md:text-left">
+    <h2 class="text-2xl md:text-4xl font-bold leading-tight">
+      Creative Beats & Sound Design
+      <span class="block text-sm md:text-base font-medium text-gray-500">
+        Experience a sample beat engineered by our in-house producers.
+      </span>
+    </h2>
+
+    <audio id="beatPlayer" controls preload="none" class="w-full">
+      <source src={beatFile} type="audio/mpeg" />
+      Your browser does not support audio playback.
+    </audio>
+
+    <script client:load>
+      const player = document.getElementById("beatPlayer");
+      if (player) player.loop = false; // stops after finish
+    </script>
+  </div>
+
+</section>
