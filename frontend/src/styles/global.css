@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+/* ============================
+   Scroll reveal animation
+   ============================ */
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 1.5s ease-out,
+  transform 1.5s ease-out;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -2,24 +2,74 @@
 // StudioSection.astro
 ---
 
-<section class="bg-gradient-to-r from-[#dcb0f7] to-[#aebef1] py-16 px-6 md:px-16 text-center md:text-left">
-  
-  <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
-    Our Studio Experience
-  </h2>
+<section class="bg-gradient-to-r from-[#643085] to-[#aebef1] py-16 px-6 md:px-16 reveal-container">
+   <div class="grid md:grid-cols-2 gap-10 items-center">
+    <!-- RIGHT (on desktop) / TOP (on mobile): IMAGE GRID -->
+    <div class="order-1 md:order-2 grid grid-cols-2 gap-4 reveal-item">
+      <img
+        src="/assets/services/studio.jpg"
+        alt="Studio Equipment"
+        class="w-full h-40 md:h-48 object-cover rounded-xl"
+      />
+      <img
+        src="/assets/services/recording.jpg"
+        alt="Music Recording"
+        class="w-full h-40 md:h-48 object-cover rounded-xl"
+      />
+      <img
+        src="/assets/services/marketing.jpg"
+        alt="Marketing & Media"
+        class="w-full h-40 md:h-48 object-cover rounded-xl"
+      />
+      <img
+        src="/assets/services/photography.jpg"
+        alt="Photography"
+        class="w-full h-40 md:h-48 object-cover rounded-xl"
+      />
+    </div>
+        <!-- LEFT (on desktop) / BOTTOM (on mobile): TEXT CONTENT -->
+  <div class="order-2 md:order-1 md:w-full text-center md:text-left">
+    <div class="max-w-xl">
 
-  <p class="max-w-3xl text-gray-600 text-sm md:text-base leading-relaxed mb-8">
-    FunGab Global is a UK-based creative powerhouse specializing in 
-    <b>Media, Marketing, Photography, Music Production & Cinematography</b>. 
-    Our studio blends innovation and visual storytelling to bring ideas to life 
+      <h2 class="text-white text-3xl md:text-5xl font-extrabold leading-tight mb-4">
+    Our <span class="bg-gradient-to-r from-[#86d3ed] via-[#a297ee] to-[#ee7ce6] bg-clip-text text-transparent">
+          Dynamic
+        </span> Experience
+      </h2>
+
+      <p class="max-w-3xl text-white text-sm md:text-base leading-relaxed mb-8">
+    FunGab Global is a UK-based creative powerhouse specializing in; 
+    <b>Media, Marketing, Photography, Music Production & Cinematography.</b> 
+    Our Brand blends innovation and visual storytelling to bring ideas  to life 
     with precision, color and compelling impact.
-  </p>
+      </p>
 
-  <a 
-    href="/services"
-    class="inline-block px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-[#D234C7] to-[#32BEF1] hover:opacity-90 transition-all"
-  >
-    View Services
-  </a>
+      <a 
+        href="/services"
+        class="inline-block px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r from-[#D234C7] to-[#32BEF1] hover:opacity-90 transition-all">
+        Our Services
+      </a>
+</div>
+</div>
 
+</div>
 </section>
+
+
+<script client:load>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  document.querySelectorAll(".reveal-item").forEach(el => {
+    observer.observe(el);
+  });
+</script>
