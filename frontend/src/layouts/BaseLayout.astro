@@ -18,6 +18,29 @@ const {
   <body class="font-sans bg-white text-gray-900">
     <Navbar client:load />
          
-    <slot />            
+    <slot />   
+    
+    <script>
+  const revealElements = () => {
+    const elements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    elements.forEach(el => observer.observe(el));
+  };
+
+  document.addEventListener("DOMContentLoaded", revealElements);
+</script>
+
   </body>
 </html>
