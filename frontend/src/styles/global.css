@@ -20,9 +20,7 @@
 /* Image hover motion */
 .hover-lift {
   transition:
-    transform 0.45s ease,
-    box-shadow 0.45s ease;
-  will-change: transform;
+    transform 0.12s ease-out,
 }
 
 .hover-lift:hover {
@@ -33,7 +31,6 @@
 /* Scroll reveal animation */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
   transition:
     opacity 0.9s ease-out,
     transform 0.9s ease-out;
@@ -41,7 +38,7 @@
 
 .reveal.show {
   opacity: 1;
-  transform: translateY(0);
+  
 }
 
 /* Slight delay helpers */
