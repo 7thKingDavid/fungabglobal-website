@@ -23,15 +23,13 @@ const {
          
     <slot />   
     
-    <script>
-  const revealElements = () => {
-    const elements = document.querySelectorAll(".reveal");
-
+   <script>
+  if (typeof window !== "undefined") {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+            entry.target.classList.add("is-visible");
             observer.unobserve(entry.target);
           }
         });
@@ -39,11 +37,13 @@ const {
       { threshold: 0.15 }
     );
 
-    elements.forEach(el => observer.observe(el));
-  };
-
-  document.addEventListener("DOMContentLoaded", revealElements);
+    document.addEventListener("DOMContentLoaded", () => {
+      document
+        .querySelectorAll(".animate-on-scroll")
+        .forEach((el) => observer.observe(el));
+    });
+  }
 </script>
-
+    
   </body>
 </html>
