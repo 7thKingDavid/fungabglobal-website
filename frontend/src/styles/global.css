@@ -1,11 +1,27 @@
 @import "tailwindcss";
 
 /* ============================
+   Remove v0 watermarks
+   ============================ */
+
+.v0-watermark,
+[class*="v0"],
+[class*="vercel"],
+.powered-by,
+[data-v0],
+iframe[src*="v0.app"],
+[aria-label*="v0"],
+[aria-label*="Vercel"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* ============================
    Scroll reveal animation
    ============================ */
 
 .animate-on-scroll {
-  opacity: 1;
+  opacity: 0;
   transform: translateY(40px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }

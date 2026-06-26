@@ -1,0 +1,100 @@
+---
+// Footer.astro
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-black text-white pt-16 pb-8 px-6 md:px-16">
+  <div class="max-w-7xl mx-auto">
+    <!-- Main Footer Content -->
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+      
+      <!-- Brand Section -->
+      <div class="md:col-span-1">
+        <div class="mb-6">
+          <img 
+            src="/logo.png" 
+            alt="FunGab Logo" 
+            class="max-w-32 object-contain mb-3"
+          />
+          <p class="text-gray-300 text-sm leading-relaxed">
+            UK-based creative powerhouse transforming ideas into impactful experiences.
+          </p>
+        </div>
+        
+        <!-- Social Icons -->
+        <div class="flex gap-4">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-[#D234C7] transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.322a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/></svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-[#D234C7] transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7"/></svg>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-[#D234C7] transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.54c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.33 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-[#D234C7] transition-colors">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Services Links -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Services</h3>
+        <ul class="space-y-2">
+          <li><a href="/services#media" class="text-gray-400 hover:text-[#D234C7] transition-colors">Media</a></li>
+          <li><a href="/services#marketing" class="text-gray-400 hover:text-[#D234C7] transition-colors">Marketing</a></li>
+          <li><a href="/services#photography" class="text-gray-400 hover:text-[#D234C7] transition-colors">Photography</a></li>
+          <li><a href="/services#music" class="text-gray-400 hover:text-[#D234C7] transition-colors">Music Production</a></li>
+          <li><a href="/services#cinematography" class="text-gray-400 hover:text-[#D234C7] transition-colors">Cinematography</a></li>
+          <li><a href="/sessions" class="text-gray-400 hover:text-[#D234C7] transition-colors">Live Sessions</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Company</h3>
+        <ul class="space-y-2">
+          <li><a href="/about" class="text-gray-400 hover:text-[#D234C7] transition-colors">About Us</a></li>
+          <li><a href="/blog" class="text-gray-400 hover:text-[#D234C7] transition-colors">Blog</a></li>
+          <li><a href="/contact" class="text-gray-400 hover:text-[#D234C7] transition-colors">Contact</a></li>
+          <li><a href="/booking" class="text-gray-400 hover:text-[#D234C7] transition-colors">Booking</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-[#D234C7] transition-colors">Privacy Policy</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-[#D234C7] transition-colors">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="font-bold text-lg mb-4">Contact</h3>
+        <ul class="space-y-3 text-gray-400">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-1 text-[#D234C7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            <a href="mailto:hello@fungabglobal.co.uk" class="hover:text-[#D234C7] transition-colors">hello@fungabglobal.co.uk</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-1 text-[#D234C7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <a href="tel:+441234567890" class="hover:text-[#D234C7] transition-colors">+44 (0) 1234 567890</a>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 mt-1 text-[#D234C7]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <span>Northumbria, UK</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-gray-800 my-8"></div>
+
+    <!-- Bottom Footer -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-gray-500 text-sm">
+        &copy; {currentYear} FunGab Global Ent. LTD. All rights reserved.
+      </p>
+      <p class="text-gray-500 text-sm">
+        Crafted with precision and creativity in the UK
+      </p>
+    </div>
+  </div>
+</footer>
