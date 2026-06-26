@@ -1,0 +1,311 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Footer from "../components/Footer.astro";
+
+const pricingTiers = [
+  {
+    name: "Studio Hour",
+    price: "£85",
+    duration: "1 hour",
+    description: "Perfect for short sessions or consultations",
+    features: [
+      "1 hour studio time",
+      "Basic mixing included",
+      "Access to standard equipment",
+      "Engineer support",
+      "Digital file delivery"
+    ],
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    name: "Half Day Session",
+    price: "£250",
+    duration: "4 hours",
+    description: "Ideal for recording and initial mix",
+    features: [
+      "4 hours studio time",
+      "Full mixing services",
+      "Access to all equipment",
+      "Professional engineer",
+      "HD audio files",
+      "Revision rounds (2)"
+    ],
+    color: "from-purple-500 to-pink-500",
+    popular: true
+  },
+  {
+    name: "Full Day Session",
+    price: "£450",
+    duration: "8 hours",
+    description: "Complete recording to master workflow",
+    features: [
+      "8 hours studio time",
+      "Professional mixing & mastering",
+      "Premium equipment access",
+      "Dedicated engineer & producer",
+      "Stem files & masters",
+      "Unlimited revisions",
+      "Session consultation"
+    ],
+    color: "from-orange-500 to-red-500"
+  },
+  {
+    name: "Project Bundle",
+    price: "Custom",
+    duration: "Multi-day",
+    description: "For large-scale projects and albums",
+    features: [
+      "Flexible scheduling",
+      "Full production support",
+      "Expert team collaboration",
+      "Multiple song arrangements",
+      "Premium mastering suite",
+      "Promotional consultation",
+      "Custom pricing"
+    ],
+    color: "from-emerald-500 to-teal-500"
+  }
+];
+
+const services = [
+  {
+    title: "Recording",
+    description: "State-of-the-art recording facilities with professional-grade microphones, preamps, and analog equipment for capturing pristine vocals, instruments, and live performances.",
+    image: "/assets/services/recording.jpg"
+  },
+  {
+    title: "Mixing",
+    description: "Expert mixing engineers who balance, EQ, compress, and add creative effects to your tracks, ensuring professional sonic clarity and impact.",
+    image: "/assets/services/studio.jpg"
+  },
+  {
+    title: "Mastering",
+    description: "Final mastering stage with industry-standard tools to optimize your mix for all platforms, ensuring consistency and maximum loudness.",
+    image: "/assets/services/music.jpg"
+  },
+  {
+    title: "Live Sessions",
+    description: "Professional live recording and session musician services. Capture authentic performances with our experienced team and premium equipment.",
+    image: "/assets/services/live-session.jpg"
+  }
+];
+---
+
+<BaseLayout title="Sessions — FunGab Global" description="Professional recording, mixing, and mastering sessions. Book your music production session with FunGab Global today.">
+  <!-- Hero Section -->
+  <section class="relative min-h-[50vh] w-full text-white pt-32 pb-20 overflow-hidden">
+    <img 
+      src="/recording-studio.jpg" 
+      alt="Recording Sessions" 
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-16 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Professional Recording Sessions</h1>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200">
+        From recording and mixing to mastering, we offer comprehensive audio production services tailored to your creative vision.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="py-20 px-6 md:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">Session Pricing</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+          Flexible packages to suit any project size or budget. All sessions include professional engineering and equipment.
+        </p>
+      </div>
+
+      <!-- Pricing Cards -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {pricingTiers.map((tier) => (
+          <div 
+            class={`relative group rounded-lg overflow-hidden transition-transform hover:scale-105 ${
+              tier.popular ? 'lg:scale-105 shadow-2xl' : 'shadow-lg'
+            }`}
+          >
+            <!-- Background Gradient -->
+            <div class={`absolute inset-0 bg-gradient-to-br ${tier.color} opacity-90 group-hover:opacity-100 transition-opacity`}></div>
+            
+            <!-- Content -->
+            <div class="relative p-6 text-white h-full flex flex-col justify-between">
+              {tier.popular && (
+                <div class="absolute top-0 right-0 bg-yellow-400 text-black px-4 py-1 text-sm font-bold rounded-bl-lg">
+                  POPULAR
+                </div>
+              )}
+              
+              <div>
+                <h3 class="text-2xl font-bold mb-2">{tier.name}</h3>
+                <p class="text-white/80 text-sm mb-4">{tier.description}</p>
+                
+                <div class="mb-6">
+                  <div class="text-4xl font-bold">{tier.price}</div>
+                  <div class="text-white/80 text-sm">{tier.duration}</div>
+                </div>
+
+                <!-- Features -->
+                <ul class="space-y-3 mb-8">
+                  {tier.features.map((feature) => (
+                    <li class="flex items-start gap-3">
+                      <svg class="w-5 h-5 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                      <span class="text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <!-- CTA Button -->
+              <a
+                href="/contact"
+                class="block text-center px-4 py-3 rounded-lg bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-all"
+              >
+                Book Now
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Offer Section -->
+  <section class="py-20 px-6 md:px-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">What&apos;s Included in Every Session</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        {services.map((service, index) => (
+          <div class="group animate-on-scroll flex flex-col md:flex-row gap-6" style={`transition-delay: ${index * 100}ms`}>
+            <!-- Image -->
+            <div class="md:w-1/3 h-48 md:h-auto rounded-lg overflow-hidden">
+              <img 
+                src={service.image}
+                alt={service.title}
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            
+            <!-- Content -->
+            <div class="md:w-2/3">
+              <h3 class="text-2xl font-bold mb-3 text-gray-900">{service.title}</h3>
+              <p class="text-gray-700 leading-relaxed">{service.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Equipment Section -->
+  <section class="py-20 px-6 md:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Professional Equipment</h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center animate-on-scroll">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-r from-[#D234C7] to-[#32BEF1] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3.5a.5.5 0 100 1 .5.5 0 000-1zm0 2a.5.5 0 100 1 .5.5 0 000-1zm0 2a.5.5 0 100 1 .5.5 0 000-1z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Microphones</h3>
+          <p class="text-gray-600">Neumann, Shure, Telefunken, and other premium recording mics</p>
+        </div>
+
+        <div class="text-center animate-on-scroll">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-r from-[#D234C7] to-[#32BEF1] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 6a1 1 0 112 0 1 1 0 01-2 0zm0 4a1 1 0 112 0 1 1 0 01-2 0z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Preamps & Compressors</h3>
+          <p class="text-gray-600">High-end analog gear for pristine, professional sound</p>
+        </div>
+
+        <div class="text-center animate-on-scroll">
+          <div class="w-16 h-16 rounded-full bg-gradient-to-r from-[#D234C7] to-[#32BEF1] flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 011 1v8a1 1 0 001 1h1a1 1 0 100-2h-1V4a3 3 0 00-3-3H4a3 3 0 00-3 3v11a3 3 0 003 3h10a3 3 0 003-3v-1a1 1 0 10-2 0v1a1 1 0 001-1V5z" clip-rule="evenodd"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">DAWs & Software</h3>
+          <p class="text-gray-600">Pro Tools, Logic Pro, and industry-standard plugins</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 px-6 md:px-16 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Frequently Asked Questions</h2>
+      
+      <div class="space-y-6">
+        <details class="group border border-gray-300 rounded-lg p-6 cursor-pointer hover:bg-gray-100 transition-colors" open>
+          <summary class="flex items-center justify-between font-semibold text-lg text-gray-900">
+            How should I prepare for my session?
+            <span class="group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Come with your arrangements finalized, lyrics ready, and reference tracks if you have them. We&apos;ll help guide you through the recording process to capture your best performance.</p>
+        </details>
+
+        <details class="group border border-gray-300 rounded-lg p-6 cursor-pointer hover:bg-gray-100 transition-colors">
+          <summary class="flex items-center justify-between font-semibold text-lg text-gray-900">
+            Can I book multiple sessions for an album?
+            <span class="group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Absolutely! We offer discounted rates for album projects. Contact us to discuss your full project scope and we&apos;ll create a custom package for you.</p>
+        </details>
+
+        <details class="group border border-gray-300 rounded-lg p-6 cursor-pointer hover:bg-gray-100 transition-colors">
+          <summary class="flex items-center justify-between font-semibold text-lg text-gray-900">
+            What file formats will I receive?
+            <span class="group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-4 text-gray-700">You&apos;ll receive high-quality WAV files (24-bit/96kHz), MP3s for streaming, and stem files for further editing if needed. Masters are delivered in industry-standard formats.</p>
+        </details>
+
+        <details class="group border border-gray-300 rounded-lg p-6 cursor-pointer hover:bg-gray-100 transition-colors">
+          <summary class="flex items-center justify-between font-semibold text-lg text-gray-900">
+            Do you offer remote/online sessions?
+            <span class="group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-4 text-gray-700">Yes! We can arrange remote sessions for initial consultations and some remote mixing services. However, for the best recording quality, we recommend in-studio sessions.</p>
+        </details>
+
+        <details class="group border border-gray-300 rounded-lg p-6 cursor-pointer hover:bg-gray-100 transition-colors">
+          <summary class="flex items-center justify-between font-semibold text-lg text-gray-900">
+            What&apos;s your cancellation policy?
+            <span class="group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-4 text-gray-700">We require 48 hours notice for cancellations for a full refund. Late cancellations (less than 48 hours) will be charged at 50% of the session rate.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 px-6 md:px-16 bg-gradient-to-r from-[#643085] to-[#aebef1]">
+    <div class="max-w-4xl mx-auto text-center text-white">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Create?</h2>
+      <p class="text-lg mb-8 text-white/90">
+        Let&apos;s bring your music to life. Book your session today and let our team help you achieve your sonic vision.
+      </p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a 
+          href="/contact"
+          class="px-8 py-3 rounded-full bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-all"
+        >
+          Book a Session
+        </a>
+        <a 
+          href="/services"
+          class="px-8 py-3 rounded-full border-2 border-white text-white font-semibold hover:bg-white/20 transition-all"
+        >
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

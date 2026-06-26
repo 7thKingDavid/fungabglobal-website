@@ -1,0 +1,243 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Footer from "../components/Footer.astro";
+
+const services = [
+  {
+    id: "media",
+    title: "Media",
+    icon: "🎬",
+    description: "Creative media solutions that amplify your brand message",
+    details: [
+      "Commercial video production",
+      "Brand storytelling",
+      "Content creation",
+      "Social media content",
+      "Documentary production",
+      "Video editing and post-production"
+    ]
+  },
+  {
+    id: "marketing",
+    title: "Marketing",
+    icon: "📊",
+    description: "Strategic marketing campaigns built for growth and impact",
+    details: [
+      "Digital marketing strategy",
+      "Campaign development",
+      "Content marketing",
+      "Social media management",
+      "Brand positioning",
+      "Performance analytics"
+    ]
+  },
+  {
+    id: "photography",
+    title: "Photography",
+    icon: "📸",
+    description: "Professional photography that tells compelling visual stories",
+    details: [
+      "Studio photography",
+      "Event photography",
+      "Product photography",
+      "Fashion photography",
+      "Portrait sessions",
+      "Photo editing and retouching"
+    ]
+  },
+  {
+    id: "music",
+    title: "Music Production",
+    icon: "🎵",
+    description: "High-quality music production from concept to final master",
+    details: [
+      "Beat production",
+      "Song composition",
+      "Recording sessions",
+      "Mixing services",
+      "Mastering",
+      "Music arrangement"
+    ]
+  },
+  {
+    id: "cinematography",
+    title: "Cinematography",
+    icon: "🎥",
+    description: "Cinematic visuals crafted with precision and creativity",
+    details: [
+      "Cinematic filming",
+      "Lighting design",
+      "Color grading",
+      "Motion graphics",
+      "Animation",
+      "Visual effects"
+    ]
+  },
+  {
+    id: "sessions",
+    title: "Live Sessions",
+    icon: "🎧",
+    description: "Professional music recording and live session services",
+    details: [
+      "Live recording",
+      "Session musicians",
+      "Rehearsal space rental",
+      "Performance recording",
+      "Sound engineering",
+      "Equipment rental"
+    ]
+  }
+];
+---
+
+<BaseLayout title="Services — FunGab Global" description="Explore our comprehensive creative services including media, marketing, photography, music production, and cinematography.">
+  <!-- Hero Section -->
+  <section class="relative min-h-[50vh] w-full text-white pt-32 pb-20 overflow-hidden">
+    <img 
+      src="/bg-hero.jpg" 
+      alt="Services" 
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-16 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+        Our <span class="bg-gradient-to-r from-[#c5eaf6] via-[#dbd7f7] to-[#fbdaf9] bg-clip-text text-transparent">Creative Services</span>
+      </h1>
+      <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-200">
+        Comprehensive creative solutions to bring your vision to life. From media production to music mastering, we deliver excellence across all disciplines.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-20 px-6 md:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12">
+        {services.map((service, index) => (
+          <div 
+            id={service.id}
+            class="group animate-on-scroll"
+            style={`transition-delay: ${index * 50}ms`}
+          >
+            <!-- Service Card -->
+            <div class="border-l-4 border-[#D234C7] pl-6 pb-8 hover:pl-8 transition-all">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="text-5xl">{service.icon}</div>
+                <div>
+                  <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                    {service.title}
+                  </h3>
+                  <p class="text-gray-600 italic">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Details List -->
+              <ul class="space-y-2 mb-6">
+                {service.details.map((detail) => (
+                  <li class="flex items-center gap-3 text-gray-700">
+                    <span class="w-2 h-2 rounded-full bg-[#D234C7]"></span>
+                    {detail}
+                  </li>
+                ))}
+              </ul>
+
+              <!-- CTA Button -->
+              <a
+                href="/contact"
+                class="inline-block px-6 py-2 rounded-full bg-gradient-to-r from-[#D234C7] to-[#32BEF1] text-white font-semibold hover:opacity-90 transition-all"
+              >
+                Get Started
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-20 px-6 md:px-16 bg-gradient-to-r from-[#643085] to-[#aebef1]">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="text-white">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Why Choose <span class="bg-gradient-to-r from-[#86d3ed] via-[#a297ee] to-[#ee7ce6] bg-clip-text text-transparent">FunGab Global</span>
+          </h2>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white font-bold">✓</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-1">Experienced Team</h3>
+                <p class="text-gray-100">Years of industry expertise across all creative disciplines</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white font-bold">✓</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-1">State-of-the-Art Equipment</h3>
+                <p class="text-gray-100">Top-quality gear and technology for professional results</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white font-bold">✓</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-1">Personalized Solutions</h3>
+                <p class="text-gray-100">Custom packages tailored to your specific needs</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-white font-bold">✓</span>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg mb-1">Timely Delivery</h3>
+                <p class="text-gray-100">We respect deadlines and deliver on schedule</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <img src="/work-1.jpg" alt="Studio work" class="rounded-lg hover-lift" />
+          <img src="/work-2.jpg" alt="Creative session" class="rounded-lg hover-lift" />
+          <img src="/assets/services/studio.jpg" alt="Equipment" class="rounded-lg hover-lift" />
+          <img src="/assets/services/recording.jpg" alt="Recording" class="rounded-lg hover-lift" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 px-6 md:px-16 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Project?</h2>
+      <p class="text-gray-600 mb-8 text-lg">
+        Let&apos;s collaborate and create something amazing together. Contact us today to discuss your vision.
+      </p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a 
+          href="/contact"
+          class="px-8 py-3 rounded-full bg-gradient-to-r from-[#D234C7] to-[#32BEF1] text-white font-semibold hover:opacity-90 transition-all"
+        >
+          Contact Us
+        </a>
+        <a 
+          href="/booking"
+          class="px-8 py-3 rounded-full border-2 border-[#D234C7] text-[#D234C7] font-semibold hover:bg-[#D234C7]/10 transition-all"
+        >
+          Book a Session
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
