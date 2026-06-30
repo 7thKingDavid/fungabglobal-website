@@ -1,0 +1,341 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Footer from "../../components/Footer.astro";
+
+// Define all blog posts
+const posts = [
+  {
+    id: 1,
+    slug: "a-day-at-the-studio",
+    title: "A Day with me at FunGab Global Studio in Northumbria",
+    category: "News & Updates",
+    date: "January 11, 2026",
+    author: "FunGab Team",
+    image: "/blog/blog-1.png",
+    content: `
+      <p>
+        Experience a behind-the-scenes look at our creative studio in Northumbria. From vocal recording to final mixing, 
+        discover what goes into creating professional music that resonates with audiences worldwide.
+      </p>
+      
+      <h3>The Creative Process</h3>
+      <p>
+        At FunGab Global, we believe that great music starts with great ideas. Our process begins with understanding your 
+        vision, collaborating with you every step of the way to ensure your creative goals are met.
+      </p>
+      
+      <h3>State-of-the-Art Equipment</h3>
+      <p>
+        Our studio is equipped with professional-grade recording equipment, mixing consoles, and acoustic treatment that 
+        rivals any major facility. We invest in the best technology to ensure your music sounds exceptional.
+      </p>
+      
+      <h3>Professional Team</h3>
+      <p>
+        Our experienced engineers and producers have worked on hundreds of projects across multiple genres. Whether you're 
+        recording your first single or producing a full album, we bring expertise and creativity to every session.
+      </p>
+      
+      <p>
+        Ready to create something amazing? Contact us today to book your session at FunGab Global Studio.
+      </p>
+    `
+  },
+  {
+    id: 2,
+    slug: "find-your-unique-voice",
+    title: "How to Find Your Own Unique Voice?",
+    category: "Music Tips",
+    date: "November 16, 2025",
+    author: "Alex Johnson",
+    image: "/blog/blog-2.png",
+    content: `
+      <p>
+        Developing your signature sound is crucial in today's competitive music industry. Your unique voice is what sets you 
+        apart from thousands of other artists. Here are proven techniques and strategies to discover your authentic voice.
+      </p>
+      
+      <h3>1. Explore Different Genres</h3>
+      <p>
+        Don't limit yourself to one genre. Listen to a wide variety of music—from classical to electronic, jazz to hip-hop. 
+        This exposure helps you understand different approaches to songwriting, production, and vocal expression.
+      </p>
+      
+      <h3>2. Experiment with Production</h3>
+      <p>
+        Work with different producers and collaborators. Each collaboration brings new perspectives and techniques that can 
+        influence your sound. Don't be afraid to try unconventional production choices.
+      </p>
+      
+      <h3>3. Focus on Authenticity</h3>
+      <p>
+        Your unique voice comes from your personal experiences, emotions, and perspective. Write about what matters to you. 
+        Be honest in your lyrics and performances. Audiences connect with authenticity.
+      </p>
+      
+      <h3>4. Practice Vocal Techniques</h3>
+      <p>
+        Work with vocal coaches to develop your technical skills. Understanding breathing techniques, pitch control, and 
+        vocal effects will give you more tools to express your unique sound.
+      </p>
+      
+      <h3>5. Record and Review</h3>
+      <p>
+        Regularly record yourself and listen back critically. Identify what sounds good and what needs improvement. Over 
+        time, you'll develop clarity about your sonic identity.
+      </p>
+    `
+  },
+  {
+    id: 3,
+    slug: "when-to-start-singing",
+    title: "When Should I Start Singing Songs?",
+    category: "Career Advice",
+    date: "December 13, 2024",
+    author: "Sarah Williams",
+    image: "/blog/blog-3.png",
+    content: `
+      <p>
+        Timing is everything in music. The question of when to start singing professionally is one many aspiring artists ask. 
+        The answer? It depends on several factors. Let's explore when the right time might be for you.
+      </p>
+      
+      <h3>Skill Development</h3>
+      <p>
+        Before launching as a professional singer, ensure you've developed solid vocal fundamentals. Work with a vocal coach, 
+        practice regularly, and record demos to assess your readiness. Most professionals recommend at least 2-3 years of 
+        focused development.
+      </p>
+      
+      <h3>Original Material</h3>
+      <p>
+        Have you written original songs or identified songs that truly represent your style? Professional singers need a 
+        distinctive catalog. Start with at least 5-10 well-developed original songs that showcase your voice and perspective.
+      </p>
+      
+      <h3>Building Your Fanbase</h3>
+      <p>
+        In today's digital age, you don't need a record label to start. Use social media, streaming platforms, and live 
+        performances to build an audience. Start performing when you have a group of loyal listeners who appreciate your work.
+      </p>
+      
+      <h3>Market Conditions</h3>
+      <p>
+        Consider current market trends in your genre. Is there demand for your style of music? Research what's resonating 
+        with listeners and position yourself accordingly. Sometimes waiting for the right moment means better opportunities.
+      </p>
+      
+      <h3>The Right Mindset</h3>
+      <p>
+        Most importantly, ensure you're doing this for the right reasons. A sustainable career in music requires passion, 
+        resilience, and commitment. If you're ready to work hard and face challenges, you're ready to start.
+      </p>
+    `
+  },
+  {
+    id: 4,
+    slug: "music-production-guide",
+    title: "The Complete Guide to Modern Music Production",
+    category: "Production",
+    date: "January 5, 2026",
+    author: "Marcus Chen",
+    image: "/assets/services/music.png",
+    content: `
+      <p>
+        Music production has evolved dramatically over the past decade. Whether you're recording your first track or refining 
+        your craft, understanding modern production techniques is essential. This comprehensive guide covers everything from 
+        recording to mastering.
+      </p>
+      
+      <h3>Pre-Production</h3>
+      <p>
+        Before you hit record, plan your project. Define the overall vision, select instrumentation, and arrange your songs. 
+        Spend time getting the arrangement right before moving to the recording phase.
+      </p>
+      
+      <h3>Recording</h3>
+      <p>
+        Quality recording requires proper equipment and technique. Invest in good microphones and audio interfaces. Set up your 
+        recording space with acoustic treatment to minimize unwanted reflections and noise.
+      </p>
+      
+      <h3>Mixing</h3>
+      <p>
+        Mixing brings all elements together. Balance levels, EQ, compression, and effects to create a polished mix. Take 
+        breaks to rest your ears and maintain perspective throughout the mixing process.
+      </p>
+      
+      <h3>Mastering</h3>
+      <p>
+        Mastering is the final step that prepares your music for distribution. Use EQ, compression, and limiting to optimize 
+        your mix for different playback systems and streaming platforms.
+      </p>
+    `
+  },
+  {
+    id: 5,
+    slug: "mixing-mistakes",
+    title: "Top 10 Mixing Mistakes to Avoid",
+    category: "Production",
+    date: "December 28, 2025",
+    author: "FunGab Team",
+    image: "/assets/services/studio.png",
+    content: `
+      <p>
+        Common mixing errors can ruin a great recording. Even experienced engineers make mistakes. Learn what professionals 
+        avoid and elevate your mixing skills to the next level.
+      </p>
+      
+      <h3>1. Mixing Too Loud</h3>
+      <p>
+        Loud mixing environments mask problems. Mix at moderate levels (around 85 dB) to make better decisions about EQ, 
+        compression, and balance.
+      </p>
+      
+      <h3>2. Not Taking Breaks</h3>
+      <p>
+        Ear fatigue leads to poor decisions. Take regular breaks to reset your hearing and maintain perspective on your mix.
+      </p>
+      
+      <h3>3. Over-Compressing</h3>
+      <p>
+        Compression is powerful but easy to overuse. Use it to enhance, not to control every track. Leave room for dynamics.
+      </p>
+      
+      <h3>4. Ignoring Phase Issues</h3>
+      <p>
+        Phase problems can cause subtle but noticeable frequency cancellation. Check phase alignment, especially with multiple 
+        microphones on one instrument.
+      </p>
+      
+      <h3>5. Poor Monitoring Environment</h3>
+      <p>
+        Your monitoring environment has the biggest impact on mixing quality. Invest in proper studio monitors and acoustic treatment.
+      </p>
+    `
+  },
+  {
+    id: 6,
+    slug: "studio-setup-guide",
+    title: "Setting Up Your Home Recording Studio",
+    category: "Equipment",
+    date: "December 20, 2025",
+    author: "Tech Expert",
+    image: "/assets/services/recording.png",
+    content: `
+      <p>
+        Building a professional home studio on any budget is possible with the right knowledge. We guide you through essential 
+        equipment, room treatment, and optimization techniques.
+      </p>
+      
+      <h3>Essential Equipment</h3>
+      <p>
+        Start with the basics: a quality audio interface, microphone, headphones, and monitor speakers. These four items will 
+        enable professional-quality recordings.
+      </p>
+      
+      <h3>Room Treatment</h3>
+      <p>
+        Acoustic treatment controls reflections and standing waves. Use absorption panels on walls and diffusers in corners. 
+        Proper treatment dramatically improves recording quality.
+      </p>
+      
+      <h3>Cable Management</h3>
+      <p>
+        Keep cables organized and away from audio cables to minimize interference. Use high-quality cables and proper shielding 
+        to reduce electrical noise.
+      </p>
+      
+      <h3>Monitoring Setup</h3>
+      <p>
+        Position monitors at ear level in a triangle formation with your listening position. This provides accurate stereo 
+        imaging and frequency response representation.
+      </p>
+      
+      <h3>Budget-Friendly Tips</h3>
+      <p>
+        Start small and upgrade gradually. Use thick blankets for acoustic treatment. Build relationships with other musicians 
+        to share equipment and resources.
+      </p>
+    `
+  }
+];
+
+// Get the post based on the slug
+const { slug } = Astro.params;
+const post = posts.find(p => p.slug === slug);
+
+// Generate static paths for pre-rendering
+export async function getStaticPaths() {
+  return posts.map(post => ({
+    params: { slug: post.slug }
+  }));
+}
+---
+
+<BaseLayout title={`${post?.title} — FunGab Global`} description={post?.content?.substring(0, 150) || ""}>
+  {post ? (
+    <>
+      <!-- Hero Section -->
+      <section class="relative min-h-[50vh] w-full text-white pt-32 pb-16 overflow-hidden">
+        <img 
+          src={post.image}
+          alt={post.title}
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          decoding="sync"
+        />
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-16">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="inline-block px-3 py-1 text-xs font-semibold bg-[#D234C7]/20 text-[#D234C7] rounded-full">
+              {post.category}
+            </span>
+            <span class="text-sm text-gray-300">{post.date}</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">{post.title}</h1>
+          <div class="flex items-center gap-4 text-gray-300">
+            <span>By {post.author}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Content -->
+      <section class="py-16 px-6 md:px-16 bg-white">
+        <div class="max-w-3xl mx-auto prose prose-lg prose-headings:text-gray-900 prose-headings:font-bold prose-p:text-gray-700">
+          <div set:html={post.content} />
+        </div>
+      </section>
+
+      <!-- Related Posts CTA -->
+      <section class="py-16 px-6 md:px-16 bg-gray-50">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-4 text-gray-900">Explore More</h2>
+          <p class="text-gray-600 mb-8">Discover more insights and tips from our blog.</p>
+          <a 
+            href="/blog"
+            class="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-[#D234C7] to-[#32BEF1] text-white font-semibold hover:opacity-90 transition-all"
+          >
+            Back to Blog
+          </a>
+        </div>
+      </section>
+    </>
+  ) : (
+    <section class="py-20 px-6 md:px-16 bg-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">Post Not Found</h1>
+        <p class="text-gray-600 mb-8">Sorry, we couldn't find the blog post you're looking for.</p>
+        <a 
+          href="/blog"
+          class="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-[#D234C7] to-[#32BEF1] text-white font-semibold hover:opacity-90 transition-all"
+        >
+          Back to Blog
+        </a>
+      </div>
+    </section>
+  )}
+
+  <Footer />
+</BaseLayout>

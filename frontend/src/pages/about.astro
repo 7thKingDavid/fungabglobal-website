@@ -4,28 +4,34 @@ import Footer from "../components/Footer.astro";
 
 const teamMembers = [
   {
+    name: "Rebecca Funmilayo Adejumo",
+    role: "Founder & Director",
+    bio: "Visionary leader with 15+ years in creative direction and brand strategy. Founded FunGab Global with a mission to transform creative visions into impactful experiences.",
+    image: "/team/rebecca-founder.png"
+  },
+  {
     name: "Alex Johnson",
     role: "Creative Director",
     bio: "Visionary leader with 15+ years in creative direction and brand strategy.",
-    image: "/team/member-1.jpg"
+    image: "/team/member-1.png"
   },
   {
     name: "Sarah Williams",
     role: "Head of Production",
     bio: "Experienced producer known for delivering exceptional results on high-profile projects.",
-    image: "/team/member-2.jpg"
+    image: "/team/member-2.png"
   },
   {
     name: "Marcus Chen",
     role: "Audio Engineer",
     bio: "Expert sound engineer specializing in mixing and mastering with Grammy-winning artists.",
-    image: "/team/member-3.jpg"
+    image: "/team/member-3.png"
   },
   {
     name: "Emma Roberts",
     role: "Cinematographer",
     bio: "Award-winning cinematographer bringing visual storytelling to every project.",
-    image: "/team/member-4.jpg"
+    image: "/team/member-4.png"
   }
 ];
 
@@ -57,9 +63,11 @@ const values = [
   <!-- Hero Section -->
   <section class="relative min-h-[50vh] w-full text-white pt-32 pb-20 overflow-hidden">
     <img 
-      src="/bg-hero.jpg" 
+      src="/bg-hero.png" 
       alt="About FunGab Global" 
       class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="sync"
     />
     <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50"></div>
     
@@ -87,10 +95,10 @@ const values = [
         </p>
       </div>
       <div class="grid grid-cols-2 gap-4 animate-on-scroll">
-        <img src="/work-1.jpg" alt="Studio work" class="rounded-lg hover-lift" />
-        <img src="/work-2.jpg" alt="Creative session" class="rounded-lg hover-lift" />
-        <img src="/assets/services/studio.jpg" alt="Equipment" class="rounded-lg hover-lift" />
-        <img src="/assets/services/recording.jpg" alt="Recording" class="rounded-lg hover-lift" />
+        <img src="/work-1.png" alt="Studio work" class="rounded-lg hover-lift" loading="lazy" />
+        <img src="/work-2.png" alt="Creative session" class="rounded-lg hover-lift" loading="lazy" />
+        <img src="/assets/services/studio.png" alt="Equipment" class="rounded-lg hover-lift" loading="lazy" />
+        <img src="/assets/services/recording.png" alt="Recording" class="rounded-lg hover-lift" loading="lazy" />
       </div>
     </div>
   </section>
