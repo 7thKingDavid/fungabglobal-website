@@ -1,0 +1,135 @@
+---
+// StatsSection.astro
+const stats = [
+  {
+    id: 1,
+    number: 500,
+    suffix: "+",
+    label: "Projects Completed",
+    description: "Successful creative projects delivered"
+  },
+  {
+    id: 2,
+    number: 15,
+    suffix: "+",
+    label: "Years of Experience",
+    description: "Industry expertise and innovation"
+  },
+  {
+    id: 3,
+    number: 100,
+    suffix: "%",
+    label: "Client Satisfaction",
+    description: "Committed to excellence always"
+  },
+  {
+    id: 4,
+    number: 50,
+    suffix: "+",
+    label: "Creative Awards",
+    description: "Recognition for outstanding work"
+  }
+];
+---
+
+<section class="py-20 px-6 md:px-16 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+  <!-- Decorative elements -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-pink-400/10 to-purple-400/10 rounded-full blur-3xl -z-10"></div>
+  <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl -z-10"></div>
+
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <p class="text-sm tracking-widest font-semibold text-gray-500 mb-3 uppercase">
+        By The Numbers
+      </p>
+      <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">
+        Our Track Record
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Proven results that speak to our commitment to excellence and creativity
+      </p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {stats.map((stat, index) => (
+        <div
+          class="stats-card group animate-on-scroll"
+          data-target={stat.number}
+          data-index={index}
+          style={`transition-delay: ${index * 100}ms`}
+        >
+          <div class="bg-white rounded-2xl p-8 text-center h-full transition-all duration-300 group-hover:shadow-xl group-hover:scale-105 border border-gray-100/50">
+            <!-- Number Counter -->
+            <div class="mb-6">
+              <div class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+                <span class="counter" data-target={stat.number}>0</span><span class="suffix">{stat.suffix}</span>
+              </div>
+            </div>
+
+            <!-- Label -->
+            <h3 class="text-xl font-bold text-gray-900 mb-2">
+              {stat.label}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-gray-600 text-sm">
+              {stat.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Intersection Observer for scroll-triggered animations
+  const observerOptions = {
+    threshold: 0.3,
+    rootMargin: '0px'
+  };
+
+  let hasAnimated = false;
+
+  const animateCounter = (counterElement: Element, target: number, duration: number = 2000) => {
+    const start = 0;
+    const increment = target / (duration / 16); // 60fps
+    let current = start;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        (counterElement as HTMLElement).textContent = target.toString();
+        clearInterval(timer);
+      } else {
+        (counterElement as HTMLElement).textContent = Math.floor(current).toString();
+      }
+    }, 16);
+  };
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !hasAnimated) {
+        hasAnimated = true;
+        const statsCards = document.querySelectorAll('.stats-card');
+        
+        statsCards.forEach((card) => {
+          const counter = card.querySelector('.counter');
+          const target = parseInt((card as HTMLElement).getAttribute('data-target') || '0');
+          
+          if (counter) {
+            animateCounter(counter, target);
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  // Find the stats section and observe it
+  const statsSection = document.querySelector('section') as HTMLElement;
+  if (statsSection) {
+    statsObserver.observe(statsSection);
+  }
+</script>
