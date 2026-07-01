@@ -7,9 +7,11 @@ import Footer from "../components/Footer.astro";
   <!-- Hero Section -->
   <section class="relative min-h-[40vh] w-full text-white pt-32 pb-16 overflow-hidden">
     <img 
-      src="/bg-hero.jpg" 
+      src="/bg-hero.png" 
       alt="Contact Us" 
       class="absolute inset-0 w-full h-full object-cover"
+      loading="eager"
+      decoding="sync"
     />
     <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50"></div>
     
@@ -37,8 +39,9 @@ import Footer from "../components/Footer.astro";
             </div>
             <h3 class="text-lg font-semibold">Email</h3>
           </div>
-          <p class="text-gray-600 ml-16">
-            <a href="mailto:hello@fungabglobal.co.uk" class="hover:text-[#D234C7] transition-colors">hello@fungabglobal.co.uk</a>
+          <p class="text-gray-600 ml-16 space-y-2">
+            <a href="mailto:info@fungabglobal.co.uk" class="block hover:text-[#D234C7] transition-colors">info@fungabglobal.co.uk</a>
+            <a href="mailto:support@fungabglobal.co.uk" class="block hover:text-[#D234C7] transition-colors">support@fungabglobal.co.uk</a>
           </p>
         </div>
 
