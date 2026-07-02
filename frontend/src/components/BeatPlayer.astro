@@ -1,7 +1,6 @@
 ---
 // BeatPlayer.astro
-// Add beat.mp3 to public/assets/audio
-const beatFile = "/assets/audio/freebeat.mp3";
+const beatFile = "/assets/audio/afrobeat-sample.mp3";
 ---
 
 <section class="animate-on-scroll w-full bg-gradient-to-r from-[#f4d3f1] to-[#5c9fb8] py-4 px-3 md:px-12 flex flex-col md:flex-row items-center gap-8">
@@ -20,14 +19,16 @@ const beatFile = "/assets/audio/freebeat.mp3";
       </span>
     </h2>
 
-    <audio id="beatPlayer" controls preload="none" class="w-full">
+    <audio id="beatPlayer" controls preload="metadata" class="w-full accent-[#32BEF1]">
       <source src={beatFile} type="audio/mpeg" />
       Your browser does not support audio playback.
     </audio>
 
-    <script client:load >
+    <script client:load>
       const player = document.getElementById("beatPlayer");
-      if (player) player.loop = false; // stops after finish
+      if (player) {
+        player.loop = false;
+      }
     </script>
   </div>
 
