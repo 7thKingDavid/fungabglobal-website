@@ -6,27 +6,28 @@ let isOpen = false;
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
     <!-- LOGO + BRAND -->
-    <a href="/" class="flex items-center gap-3 font-bold text-xl">
+    <a href="/" class="flex items-center gap-2 font-bold text-lg">
       <img 
         src="/logo.png" 
         alt="FunGab Logo" 
-        class="max-w-18 max-h-18 object-contain"
-        width="108"
-        height="108"
+        class="max-w-24 max-h-24 object-contain"
+        width="140"
+        height="140"
       />
       <span class="bg-gradient-to-r from-[#52c2eb]  via-[#635da5] to-[#f191ea]
-                   bg-clip-text text-transparent">
+                   bg-clip-text text-transparent hidden sm:inline">
         FunGab Global
       </span>
     </a>
 
     <!-- Desktop Navigation -->
     <ul class="hidden md:flex items-center gap-10 font-medium">
-      <li><a href="/" class="hover:text-[#D234C7]">Home</a></li>
-      <li><a href="/about" class="hover:text-[#D234C7]">About</a></li>
-      <li><a href="/services" class="hover:text-[#D234C7]">Services</a></li>
-      <li><a href="/gallery" class="hover:text-[#D234C7]">Gallery</a></li>
-      <li><a href="/contact" class="hover:text-[#D234C7]">Contact</a></li>
+      <li><a href="/" class="hover:text-[#D234C7] transition-colors">Home</a></li>
+      <li><a href="/about" class="hover:text-[#D234C7] transition-colors">About</a></li>
+      <li><a href="/services" class="hover:text-[#D234C7] transition-colors">Services</a></li>
+      <li><a href="/sessions" class="hover:text-[#D234C7] transition-colors">Sessions</a></li>
+      <li><a href="/blog" class="hover:text-[#D234C7] transition-colors">Blog</a></li>
+      <li><a href="/contact" class="hover:text-[#D234C7] transition-colors">Contact</a></li>
     </ul>
 
     <!-- Mobile Menu Icon -->
@@ -42,13 +43,14 @@ let isOpen = false;
   </div>
 
   <!-- MOBILE DROPDOWN -->
-  <div id="mobileMenu" class="hidden md:hidden text-center shadow-lg border-t">
+  <div id="mobileMenu" class="hidden md:hidden text-center shadow-lg border-t bg-black/95 backdrop-blur">
     <ul class="flex flex-col gap-5 px-6 py-6 text-lg font-medium">
-      <li><a href="/" class="hover:text-[#D234C7]">Home</a></li>
-      <li><a href="/about" class="hover:text-[#D234C7]">About</a></li>
-      <li><a href="/services" class="hover:text-[#D234C7]">Services</a></li>
-      <li><a href="/gallery" class="hover:text-[#D234C7]">Gallery</a></li>
-      <li><a href="/contact" class="hover:text-[#D234C7]">Contact</a></li>
+      <li><a href="/" class="hover:text-[#D234C7] transition-colors">Home</a></li>
+      <li><a href="/about" class="hover:text-[#D234C7] transition-colors">About</a></li>
+      <li><a href="/services" class="hover:text-[#D234C7] transition-colors">Services</a></li>
+      <li><a href="/sessions" class="hover:text-[#D234C7] transition-colors">Sessions</a></li>
+      <li><a href="/blog" class="hover:text-[#D234C7] transition-colors">Blog</a></li>
+      <li><a href="/contact" class="hover:text-[#D234C7] transition-colors">Contact</a></li>
     </ul>
   </div>
 </nav>

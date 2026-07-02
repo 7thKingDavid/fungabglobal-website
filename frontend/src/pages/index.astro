@@ -7,17 +7,23 @@ import AlertPopup from "../components/AlertPopup.astro";
 import ServicesSection from "../components/ServicesSection.astro";
 import BookSessionCTA from "../components/BookSessionCTA.astro";
 import RecentPosts from "../components/RecentPosts.astro";
-import WorkWithUs from "../components/WorkWithUs.astro"
+import WorkWithUs from "../components/WorkWithUs.astro";
+import Testimonials from "../components/Testimonials.astro";
+import StatsSection from "../components/StatsSection.astro";
+import Footer from "../components/Footer.astro";
 
 ---
 
-<BaseLayout title="Fungab Global — Home">
+<BaseLayout title="Fungab Global — Home" description="FunGab Global: UK-based creative powerhouse for media, marketing, photography, music production, and cinematography.">
   <AlertPopup />
   <Hero />
   <BeatPlayer />
-<StudioSection />
-<ServicesSection />
-<BookSessionCTA />
-<RecentPosts />
-<WorkWithUs />
+  <StudioSection />
+  <ServicesSection />
+  <BookSessionCTA />
+  <Testimonials />
+  <StatsSection />
+  <RecentPosts />
+  <WorkWithUs />
+  <Footer />
 </BaseLayout>
