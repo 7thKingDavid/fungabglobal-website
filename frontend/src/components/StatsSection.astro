@@ -1,0 +1,130 @@
+<section class="relative py-20 bg-black text-white overflow-hidden">
+  <!-- Background Glow -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-0 left-1/4 w-72 h-72 bg-[#8279DC] blur-3xl rounded-full"></div>
+    <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-[#32BEF1] blur-3xl rounded-full"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-6">
+    
+    <!-- Heading -->
+    <div class="text-center mb-14">
+      <p class="uppercase tracking-[0.3em] text-sm text-[#32BEF1] mb-4">
+        Trusted Creative Excellence
+      </p>
+
+      <h2 class="text-3xl md:text-5xl font-bold leading-tight">
+        Building Impact Through
+        <span class="bg-gradient-to-r from-[#32BEF1] via-[#8279DC] to-[#D234C7] bg-clip-text text-transparent">
+          Creative Innovation
+        </span>
+      </h2>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+      <!-- Stat -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:scale-105 transition duration-300">
+        <h3
+  class="stat-number text-4xl font-extrabold text-[#32BEF1] mb-2"
+  data-target="500"
+>
+  0
+</h3>
+        <p class="text-gray-300 text-sm md:text-base">
+          Creative Projects Delivered
+        </p>
+      </div>
+
+      <!-- Stat -->
+     <!-- Stat -->
+<div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:scale-105 transition duration-300">
+  <h3
+    class="stat-number text-4xl font-extrabold text-[#8279DC] mb-2"
+    data-target="98"
+  >
+    0
+  </h3>
+
+  <p class="text-gray-300 text-sm md:text-base">
+    Client Satisfaction Rate
+  </p>
+</div>
+
+      <!-- Stat -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:scale-105 transition duration-300">
+        <h3
+  class="stat-number text-4xl font-extrabold text-[#D234C7] mb-2"
+  data-target="10"
+>
+  0
+</h3>
+        <p class="text-gray-300 text-sm md:text-base">
+          Creative & Media Services
+        </p>
+      </div>
+
+      <!-- Stat -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm hover:scale-105 transition duration-300">
+        <h3 class="text-4xl font-extrabold text-[#32BEF1] mb-2">
+          Global
+        </h3>
+        <p class="text-gray-300 text-sm md:text-base">
+          Reach & Collaboration
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<script>
+  const stats = document.querySelectorAll(".stat-number");
+
+  const animateStats = () => {
+    stats.forEach((stat) => {
+      const target = Number(stat.getAttribute("data-target"));
+      let count = 0;
+
+      const updateCount = () => {
+        const increment = target / 80;
+
+        if (count < target) {
+          count += increment;
+          stat.textContent = Math.ceil(count).toString();
+          requestAnimationFrame(updateCount);
+        } else {
+          if (target === 98) {
+  stat.textContent = `${target}%`;
+} else if (target >= 100) {
+  stat.textContent = `${target}+`;
+} else {
+  stat.textContent = `${target}+`;
+}
+        }
+      };
+
+      updateCount();
+    });
+  };
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateStats();
+          observer.disconnect();
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  const firstStat = document.querySelector(".stat-number");
+
+if (firstStat) {
+  observer.observe(firstStat);
+}
+</script>
