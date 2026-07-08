@@ -66,3 +66,38 @@ iframe[src*="v0.app"],
 .reveal-delay-2 { transition-delay: 0.3s; }
 .reveal-delay-3 { transition-delay: 0.45s; }
 .reveal-delay-4 { transition-delay: 0.6s; }
+
+/* ============================
+   Performance & Smoothness
+   ============================ */
+
+/* Smooth scrolling for buttons */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Faster image rendering */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  will-change: transform;
+}
+
+/* Glass effect ready to use */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Reduce heavy animations on mobile */
+@media (max-width: 768px) {
+  .animate-on-scroll,
+  .hover-lift {
+    transition-duration: 0.4s;
+  }
+}
+
+/* Preload important images */
+img[loading="lazy"] {
+  loading: eager;
+}
